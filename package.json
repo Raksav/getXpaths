@@ -1,0 +1,14 @@
+{
+  "name": "getxpaths",
+  "version": "1.0.0",
+  "description": "A playwright javascript library that returns multiple relative xpaths of a web element",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.41.2",
+    "@types/node": "^20.11.19"
+  }
+}
