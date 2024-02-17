@@ -1,4 +1,3 @@
-const assert = require('node:assert');
 const { chromium } = require('playwright');
 
 (async () => {
