@@ -10,7 +10,7 @@ VS Code is my preferred IDE for playwright projects. But any other IDE is fine.
 #### Install Playwright
 1. Download and open project inside VS Code
 2. type 'npm install' in terminal and press enter to install libraries
-3. Install VS Code playwright extension from Microsoft and follow instreuctions on the extension page - https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright
+3. Install VS Code playwright extension from Microsoft and follow instructions on the extension page - https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright
    
 ## Run
 Open terminal and make sure you are at the root path of the project. Then type in the following command in terminal and press enter
