@@ -11,7 +11,8 @@ VS Code is my preferred IDE for playwright projects. But any other IDE is fine.
 1. Open any blank folder in VS Code
 2. Install this Playwright extension - https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright
 3. Follow the instruction in the extension page to install playwright
-### Run
+   
+## Run
 Open terminal and make sure you are at the root path of the project. Then type in the following command in terminal and press enter
 >node inspect.js
 
