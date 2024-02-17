@@ -1,21 +1,21 @@
 # getXpaths
 A playwright javascript library that returns multiple relative xpaths of a web element
 
-##Setup
+## Setup
 Follow the steps to setup the project
-###Install NodeJS
+### Install NodeJS
 Node JS can be downloaded from the following link - https://nodejs.org/en/download
-###Install Visual Studio Code
+### Install Visual Studio Code
 VS Code is my preferred IDE for playwright projects. But any other IDE is fine.
-###Install Playwright
+### Install Playwright
 1. Open any blank folder in VS Code
 2. Install this Playwright extension - https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright
 3. Follow the instruction in the extension page to install playwright
-###Run
+### Run
 Open terminal and make sure you are at the root path of the project. Then type in the following command in terminal and press enter
 >node inspect.js
 
-##Use
+## Use
 Follow the steps to use the library
 1. In the chromium browser press F12 to open developer console
 2. Go to console tab
