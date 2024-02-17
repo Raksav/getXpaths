@@ -8,7 +8,7 @@ Node JS can be downloaded from the following link - https://nodejs.org/en/downlo
 #### Install Visual Studio Code
 VS Code is my preferred IDE for playwright projects. But any other IDE is fine.
 #### Install Playwright
-1. Clone the project
+1. Download and open project inside VS Code
 2. type 'npm install' in terminal and press enter
    
 ## Run
