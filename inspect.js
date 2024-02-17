@@ -1,5 +1,5 @@
 /*
-@author: Vaskar Baran Saha(raksav86@gmail.com)
+@author: raksav86@gmail.com
 */
 const { chromium } = require('playwright');
 
