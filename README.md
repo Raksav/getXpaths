@@ -3,11 +3,11 @@ A playwright javascript library that returns multiple relative xpaths of a web e
 
 ## Setup
 Follow the steps to setup the project
-### Install NodeJS
+#### Install NodeJS
 Node JS can be downloaded from the following link - https://nodejs.org/en/download
-### Install Visual Studio Code
+#### Install Visual Studio Code
 VS Code is my preferred IDE for playwright projects. But any other IDE is fine.
-### Install Playwright
+#### Install Playwright
 1. Open any blank folder in VS Code
 2. Install this Playwright extension - https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright
 3. Follow the instruction in the extension page to install playwright
