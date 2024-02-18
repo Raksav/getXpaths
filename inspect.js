@@ -35,16 +35,22 @@ const { chromium } = require('playwright');
     });
 
     function getXPath(element) {
-        var attributes = ['id', 'name', 'class', 'href', 'placeholder', 'role', 'title','innertext','value'];
+        var attributes = ['innerText','id', 'name', 'class', 'href', 'placeholder', 'role', 'title','value'];
         var xpaths = [];
         for (var i = 0; i < attributes.length; i++) {
             var attr = attributes[i];
             var attrValue;
             if (attr === 'innerText') {
-                attrValue = element.innerText();
+                attrValue = element.innerText.trim();
                 if (attrValue) {
                     xpaths.push("//*[text()='" + attrValue + "']");
+                }else{
+                    attrValue = element.textContent.trim();
+                    if (attrValue) {
+                        xpaths.push("//*[text()='" + attrValue + "']");
+                    }
                 }
+
             } else {
                 attrValue = element.getAttribute(attr);
                 if (attrValue) {
