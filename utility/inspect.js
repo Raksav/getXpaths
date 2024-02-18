@@ -1,9 +1,9 @@
 /*
 @author: raksav86@gmail.com
 */
-const { chromium } = require('playwright');
-
-(async () => {
+// const { chromium } = require('playwright');
+import { chromium } from 'playwright';
+async function findXpaths () {
     // Setup
     const browser = await chromium.launch({headless:false});
     const context = await browser.newContext();
@@ -118,4 +118,5 @@ const { chromium } = require('playwright');
   // Teardown
 //   await context.close();
 //   await browser.close();
-})();
+};
+module.exports = findXpaths;
