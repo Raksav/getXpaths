@@ -41,26 +41,33 @@ const { chromium } = require('playwright');
             var attr = attributes[i];
             var attrValue;
             if (attr === 'innerText') {
-                attrValue = element.innerText.trim();
+                attrValue = element.innerText;
+                try{
+                    attrValue = attrValue.trim();
+                }catch(err){}
+
                 if (attrValue) {
-                    xpaths.push("//*[text()='" + attrValue + "']");
+                    xpaths.push("//" + element.tagName + "[text()='" + attrValue + "']");
                 }else{
-                    attrValue = element.textContent.trim();
+                    attrValue = element.innerText;
+                    try{
+                        attrValue = attrValue.trim();
+                    }catch(err){}
+
                     if (attrValue) {
-                        xpaths.push("//*[text()='" + attrValue + "']");
+                        xpaths.push("//" + element.tagName + "[text()='" + attrValue + "']");
                     }
                 }
 
             } else {
                 attrValue = element.getAttribute(attr);
                 if (attrValue) {
-                    // var attrValue = element.getAttribute(attr);
-                    var attrValueAlphabetsOnly = attrValue.replace(/[^a-zA-Z]/g, ',');
-                    var splitValues = attrValueAlphabetsOnly.split(',');
-                    var alphaParts = splitValues.filter(part => /[a-zA-Z]/.test(part))[0];
-                    xpaths.push("//*[@" + attr + "='" + attrValue + "']");
+                    var attrValueAlphabetsOnly = attrValue.replace(/\d+/g, ';#;');
+                    var splitValues = attrValueAlphabetsOnly.split(';#;');
+                    var alphaParts = splitValues.filter(part => /[a-zA-Z]/.test(part))[0].trim();
+                    xpaths.push("//" + element.tagName + "[@" + attr + "='" + attrValue + "']");
                     if (alphaParts.length > 0) {
-                        xpaths.push("//*[contains(@" + attr + ", '" + alphaParts + "')]");
+                        xpaths.push("//" + element.tagName + "[contains(@" + attr + ", '" + alphaParts + "')]");
                     }
                 }
             }
@@ -78,6 +85,17 @@ const { chromium } = require('playwright');
             if (sibling.nodeType === 1 && sibling.tagName === element.tagName) ix++;
         }
         return xpaths;
+    }
+
+    function getStaticPart(val){
+        try{
+            var attrValueAlphabetsOnly = attrValue.replace(/\d+/g, ';#;');
+            var splitValues = attrValueAlphabetsOnly.split(';#;');
+            var alphaParts = splitValues.filter(part => /[a-zA-Z]/.test(part))[0].trim();
+            return alphaParts;
+        }catch(err){
+            return null;
+        }
     }
     `;
   
