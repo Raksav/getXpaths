@@ -99,8 +99,17 @@ const { chromium } = require('playwright');
   
     // Inject the JavaScript function into the webpage every second
     setInterval(async () => {
-        await context.addInitScript(jsFunction);
-        await page.evaluate(jsFunction);
+        // Get all open pages (tabs)
+        const pages = await context.pages();
+        const tabIndex = 1;
+        if(tabIndex < pages.length){
+            const newPage = pages[tabIndex];
+            await context.addInitScript(jsFunction);
+            await newPage.evaluate(jsFunction);
+        }else{
+            await context.addInitScript(jsFunction);
+            await page.evaluate(jsFunction);
+        }
     }, 1000); // 1000 milliseconds = 1 second
 
 
