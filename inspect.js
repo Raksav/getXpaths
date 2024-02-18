@@ -16,7 +16,7 @@ const { chromium } = require('playwright');
     var xpathsLogged = false;
     document.querySelectorAll('*').forEach(function(node) {
         node.addEventListener('mouseover', function(e) {
-            this.style.outline = '1px solid red';
+            this.style.outline = '3px solid orange';
             e.stopPropagation();
         });
         node.addEventListener('mouseout', function(e) {
