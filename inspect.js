@@ -64,8 +64,10 @@ const { chromium } = require('playwright');
                 if (attrValue) {
                     xpaths.push("//" + element.tagName + "[@" + attr + "='" + attrValue + "']");
                     var alphaParts = getStaticPart(attrValue);
-                    if (alphaParts.length > 0) {
-                        xpaths.push("//" + element.tagName + "[contains(@" + attr + ", '" + alphaParts + "')]");
+                    if(alphaParts != null){
+                        if (alphaParts.length > 0) {
+                            xpaths.push("//" + element.tagName + "[contains(@" + attr + ", '" + alphaParts + "')]");
+                        }
                     }
                 }
             }
