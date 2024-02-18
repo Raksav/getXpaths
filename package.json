@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "A playwright javascript library that returns multiple relative xpaths of a web element",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {},
   "keywords": [],
   "author": "Vaskar Baran Saha",
