@@ -8,13 +8,16 @@ Node JS can be downloaded from the following link - https://nodejs.org/en/downlo
 #### Install Visual Studio Code
 VS Code is my preferred IDE for playwright projects. But any other IDE is fine.
 #### Install Playwright
-1. Download and open project inside VS Code
-2. type 'npm install' in terminal and press enter to install libraries
-3. Install VS Code playwright extension from Microsoft and follow instructions on the extension page - https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright
+1. Install VS Code playwright extension from Microsoft and follow instructions on the extension page - https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright
+#### Install getXpaths
+>use **npm i getxpaths** to install the module
+>create a .js file and use the following-
+>**const x = require('getxpaths');**
+>**x.findXpaths();** 
    
 ## Run
 Open terminal and make sure you are at the root path of the project. Then type in the following command in terminal and press enter
->node inspect.js
+>node filename.js
 
 ## Use
 Follow the steps to use the library
