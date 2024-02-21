@@ -26,7 +26,10 @@ async function findXpaths () {
         node.addEventListener('contextmenu', function(e) {
             if (!xpathsLogged) {
                 var xpaths = getXPath(this);
-                console.log(xpaths);
+                // console.log(xpaths);
+                xpaths.forEach(function(value) {
+                    console.log(value);
+                });
                 xpathsLogged = true;
             }
             e.preventDefault(); // Prevent the context menu from opening
