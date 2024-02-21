@@ -27,3 +27,6 @@ Follow the steps to use the library
 4. Move your mouse over the page to see that elements are getting highlighted
 5. Right-Click on any element and an array of xpaths appears in the browser console.
 6. Expand the array to see the xpaths
+
+## Example
+![Example](https://github.com/Raksav/getXpaths/blob/main/getXpaths.gif)
