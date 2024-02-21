@@ -1,6 +1,6 @@
 {
   "name": "getxpaths",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A playwright javascript library that returns multiple relative xpaths of a web element",
   "main": "index.js",
   "scripts": {},
