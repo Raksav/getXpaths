@@ -27,9 +27,18 @@ const { chromium } = require('playwright');
             if (!xpathsLogged) {
                 var xpaths = getXPath(this);
                 // console.log(xpaths);
+                var xpathUnion = "";
+                i=0;
                 xpaths.forEach(function(value) {
                     console.log(value);
+                    if(i==0){
+                        xpathUnion = value;
+                    }else{
+                        xpathUnion = xpathUnion + " | " + value;
+                    }
+                    i++;
                 });
+                console.log('await page.locator("' + xpathUnion + '")');
                 xpathsLogged = true;
             }
             e.preventDefault(); // Prevent the context menu from opening
@@ -128,27 +137,7 @@ const { chromium } = require('playwright');
 
         if (element === document.body) return [element.tagName];
 
-        // var ix = 0;
-        // var siblings = element.parentNode.childNodes;
-        // for (var i = 0; i < siblings.length; i++) {
-        //     var sibling = siblings[i];
-        //     if (sibling === element) {
-        //         xpaths.push(getXPath(element.parentNode) + '/' + element.tagName + '[' + (ix + 1) + ']');
-        //     }
-        //     if (sibling.nodeType === 1 && sibling.tagName === element.tagName) ix++;
-        // }
         return xpaths;
-    }
-
-    function getStaticPart(attrValue){
-        try{
-            var attrValueAlphabetsOnly = attrValue.replace(/\d+/g, ';#;');
-            var splitValues = attrValueAlphabetsOnly.split(';#;');
-            var alphaParts = splitValues.filter(part => /[a-zA-Z]/.test(part))[0].trim();
-            return alphaParts;
-        }catch(err){
-            return null;
-        }
     }
 
     function isXPathUnique(xpath, element) {
